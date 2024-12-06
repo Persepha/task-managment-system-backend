@@ -18,6 +18,8 @@ urlpatterns = [
         name="password_reset_confirm",
     ),
     path("api/v1/registration/", include("dj_rest_auth.registration.urls")),
+    # task manager system urls
+    path("tasks/", include("tasks.urls")),
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
     # Optional UI:
     path(
