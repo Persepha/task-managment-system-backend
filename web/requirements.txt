@@ -5,7 +5,9 @@
 #    pip-compile --output-file=web/requirements.txt requirements/base.in
 #
 asgiref==3.8.1
-    # via django
+    # via
+    #   django
+    #   django-cors-headers
 certifi==2024.8.30
     # via requests
 cffi==1.17.1
@@ -23,11 +25,14 @@ django==5.0
     #   -r requirements/base.in
     #   dj-rest-auth
     #   django-allauth
+    #   django-cors-headers
     #   django-filter
     #   djangorestframework
     #   djangorestframework-simplejwt
 django-allauth==0.61.1
     # via dj-rest-auth
+django-cors-headers==4.6.0
+    # via -r requirements/base.in
 django-dotenv==1.4.2
     # via -r requirements/base.in
 django-filter==24.3

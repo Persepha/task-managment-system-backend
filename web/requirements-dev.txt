@@ -7,6 +7,7 @@
 asgiref==3.8.1
     # via
     #   django
+    #   django-cors-headers
     #   django-stubs
 attrs==24.2.0
     # via
@@ -38,6 +39,7 @@ django==5.0
     #   -r C:\Shizuo\Repos\backend\drf\task-managment-system\requirements\base.in
     #   dj-rest-auth
     #   django-allauth
+    #   django-cors-headers
     #   django-debug-toolbar
     #   django-filter
     #   django-stubs
@@ -47,6 +49,8 @@ django==5.0
     #   drf-spectacular
 django-allauth==0.61.1
     # via dj-rest-auth
+django-cors-headers==4.6.0
+    # via -r C:\Shizuo\Repos\backend\drf\task-managment-system\requirements\base.in
 django-debug-toolbar==4.4.6
     # via -r requirements/dev.in
 django-dotenv==1.4.2
