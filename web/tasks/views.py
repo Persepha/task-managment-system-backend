@@ -7,7 +7,7 @@ from rest_framework.views import APIView
 
 from tasks.models import Task
 from tasks.permissions import IsOwner
-from tasks.selectors import task_list
+from tasks.selectors import task_list, task_list_by_user
 from tasks.serializers import (
     FilterSerializer,
     TaskInputSerializer,
@@ -24,7 +24,8 @@ class TaskListApi(APIView):
         filters_serializer = FilterSerializer(data=request.query_params)
         filters_serializer.is_valid(raise_exception=True)
 
-        tasks = task_list(filters=filters_serializer.validated_data)
+        user = self.request.user
+        tasks = task_list_by_user(filters=filters_serializer.validated_data, user=user)
 
         data = TaskOutputSerializer(tasks, many=True).data
 

@@ -57,12 +57,14 @@ REST_AUTH = {
     "JWT_AUTH_COOKIE": "_auth",  # Name of access token cookie
     "JWT_AUTH_REFRESH_COOKIE": "_refresh",  # Name of refresh token cookie
     "JWT_AUTH_HTTPONLY": False,  # Makes sure refresh token is sent
+    'JWT_AUTH_SECURE': True,
+    'JWT_AUTH_SAMESITE': None,
 }
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 ACCOUNT_EMAIL_VERIFICATION = "none"
 
-CORS_ORIGIN_ALLOW_ALL = True
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -74,6 +76,12 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "allauth.account.middleware.AccountMiddleware",
+]
+
+# CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
 ]
 
 ROOT_URLCONF = "task_manager.urls"
