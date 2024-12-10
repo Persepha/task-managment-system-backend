@@ -5,6 +5,7 @@ class UserOutputSerializer(serializers.Serializer):
     id = serializers.IntegerField()
     username = serializers.CharField()
     is_staff = serializers.BooleanField()
+    email = serializers.EmailField()
 
 
 class TaskOutputSerializer(serializers.Serializer):
@@ -24,6 +25,7 @@ class TaskInputSerializer(serializers.Serializer):
     description = serializers.CharField(required=False)
     status = serializers.CharField(required=False)
     priority = serializers.CharField(required=False)
+    closing_date =serializers.DateTimeField(required=False)
 
 
 class TaskUpdateInputSerializer(TaskInputSerializer):

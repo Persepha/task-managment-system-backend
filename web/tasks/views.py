@@ -78,6 +78,8 @@ class TaskUpdateApi(APIView):
 
 
 class TaskDetailApi(APIView):
+    permission_classes = (IsAuthenticated,)
+
     def get(self, request, id):
         task = get_object_or_404(Task, id=id)
         serializer = TaskOutputSerializer(task)
