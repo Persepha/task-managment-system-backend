@@ -13,7 +13,7 @@
 
 Front end part of project
 
-[Task managment system]()
+[Task managment system](https://github.com/Persepha/task-managment-system-frontend.git)
 
 
 ## Run Locally
@@ -28,7 +28,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd task-managment-system
+  cd task-managment-system-backend
 ```
 
 To correctly execute docker scripts, run the following command on linux or use wsl on windows
