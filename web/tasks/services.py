@@ -39,7 +39,7 @@ def task_delete(*, task: Task):
 
 @transaction.atomic
 def task_update(*, task: Task, data) -> Tuple[Task, bool]:
-    non_side_effect_fields = ["description", "title", "status", "priority"]
+    non_side_effect_fields = ["description", "title", "status", "priority", "closing_date"]
 
     task, has_updated = model_update(
         instance=task,
